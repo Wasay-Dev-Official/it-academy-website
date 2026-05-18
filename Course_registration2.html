@@ -350,7 +350,7 @@ if(!nome || !email || !telefone){
     return;
 }
 
-fetch("salvar.php", {
+fetch("http://localhost/your-project-folder/salvar.php", {
     method: "POST",
     headers: {"Content-Type":"application/x-www-form-urlencoded"},
     body: new URLSearchParams({
