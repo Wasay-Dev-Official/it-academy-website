@@ -28,7 +28,7 @@ body {
 }
 
 /* =========================
-   WIDTH SYSTEM (ALIGNED)
+   WIDTH SYSTEM
 ========================= */
 .hero,
 .section {
@@ -38,11 +38,10 @@ body {
 }
 
 /* =========================
-   HERO (IMAGE + GLASS)
+   HERO
 ========================= */
 .hero {
     text-align: center;
-
     margin-top: 40px;
     padding: 60px 30px;
 
@@ -56,11 +55,6 @@ body {
     border-radius: 18px;
 
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .hero h1 {
@@ -73,6 +67,8 @@ body {
     font-size: 18px;
     opacity: 0.9;
     max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* =========================
@@ -99,19 +95,15 @@ body {
 }
 
 @media (max-width: 900px) {
-    .courses {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .courses { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
-    .courses {
-        grid-template-columns: 1fr;
-    }
+    .courses { grid-template-columns: 1fr; }
 }
 
 /* =========================
-   GLASS CARDS (UPDATED)
+   CARDS
 ========================= */
 .card {
     display: block;
@@ -119,7 +111,6 @@ body {
     border-radius: 16px;
 
     text-decoration: none;
-
     color: #fff;
 
     background: rgba(255, 255, 255, 0.08);
@@ -144,12 +135,9 @@ body {
     line-height: 1.5;
 }
 
-/* hover */
 .card:hover {
     transform: translateY(-10px) scale(1.03);
-
     background: rgba(255, 255, 255, 0.18);
-
     box-shadow: 0 20px 45px rgba(0,0,0,0.25);
 }
 
@@ -177,23 +165,20 @@ body {
 }
 
 /* =========================
-   CTA (GLASS + CONSISTENT)
+   CTA
 ========================= */
 .cta {
     text-align: center;
-
     margin: 40px auto;
     padding: 50px 30px;
 
-    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #1c92d1);
+    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #1c92d2);
     background-size: 800% 800%;
     animation: bgMove 12s ease infinite;
 
     border-radius: 18px;
 
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-
-    color: white;
 }
 
 .cta p {
@@ -223,32 +208,32 @@ body {
 
     <div class="courses">
 
-        <a href="#" class="card">
+        <a href="https://www.w3schools.com/whatis/" target="_blank" class="card">
             <h3>🌐 Web Development</h3>
             <p>Criação de websites modernos com HTML, CSS e JavaScript.</p>
         </a>
 
-        <a href="#" class="card">
+        <a href="https://www.ibm.com/topics/cybersecurity" target="_blank" class="card">
             <h3>🔐 Cybersecurity</h3>
             <p>Proteção de sistemas e dados contra ameaças digitais.</p>
         </a>
 
-        <a href="#" class="card">
+        <a href="https://www.ibm.com/topics/data-science" target="_blank" class="card">
             <h3>📊 Data Science</h3>
             <p>Análise de dados e inteligência para tomada de decisões.</p>
         </a>
 
-        <a href="#" class="card">
+        <a href="https://www.ibm.com/topics/artificial-intelligence" target="_blank" class="card">
             <h3>🤖 Artificial Intelligence</h3>
             <p>Sistemas inteligentes e automação avançada.</p>
         </a>
 
-        <a href="#" class="card">
+        <a href="https://developer.android.com" target="_blank" class="card">
             <h3>📱 Mobile Development</h3>
             <p>Desenvolvimento de aplicações para dispositivos móveis.</p>
         </a>
 
-        <a href="#" class="card">
+        <a href="https://aws.amazon.com/what-is-cloud-computing/" target="_blank" class="card">
             <h3>☁️ Cloud Computing</h3>
             <p>Infraestrutura e serviços na cloud moderna.</p>
         </a>
