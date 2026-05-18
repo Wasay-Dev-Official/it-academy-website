@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<title>Confirmação</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BACKGROUND
+========================= */
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    color: white;
+
+    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #1c92d1);
+    background-size: 800% 800%;
+    animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   WRAPPER (FIXED SPACING)
+========================= */
+.wrapper {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 🔥 important */
+
+    padding-top: 70px;       /* 🔥 space top */
+    padding-bottom: 70px;    /* 🔥 space bottom */
+}
+
+/* =========================
+   CARD
+========================= */
+.container {
+    width: 90%;
+    max-width: 750px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+
+    border-radius: 20px;
+    padding: 35px;
+
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.15);
+
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* =========================
+   TITLE
+========================= */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+/* =========================
+   ROWS
+========================= */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 15px;
+    margin-bottom: 8px;
+
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.label {
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.value {
+    text-align: right;
+    max-width: 60%;
+    word-wrap: break-word;
+    opacity: 0.9;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.actions {
+    text-align: center;
+    margin-top: 25px;
+}
+
+button {
+    padding: 14px 25px;
+    margin: 5px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(0,198,255,0.4);
+}
+
+.secondary {
+    background: rgba(255,255,255,0.15);
+}
+
+.secondary:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* =========================
+   PRINT MODE
+========================= */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .container {
+        background: white !important;
+        color: black !important;
+        box-shadow: none;
+        border: none;
+    }
+
+    .row {
+        background: white !important;
+        color: black !important;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .label, .value, h1 {
+        color: black !important;
+    }
+
+    button {
+        display: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="container">
+
+<h1>Inscrição Concluída</h1>
+
+<div id="dados"></div>
+
+<div class="actions">
+    <button onclick="window.print()">🖨 Guardar como PDF</button>
+    <button class="secondary" onclick="window.location.href='Course_registration1.html'">
+        🔙 Voltar
+    </button>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* GET DATA */
+const params = new URLSearchParams(window.location.search);
+
+function row(label, value){
+    return `
+    <div class="row">
+        <div class="label">${label}</div>
+        <div class="value">${value || "-"}</div>
+    </div>
+    `;
+}
+
+document.getElementById("dados").innerHTML = `
+${row("Nome", params.get("nome"))}
+${row("Email", params.get("email"))}
+${row("Telefone", params.get("telefone"))}
+${row("Curso", params.get("curso"))}
+${row("Nível", params.get("nivel"))}
+${row("Interesses", params.get("interesses"))}
+${row("Experiência", params.get("experiencia"))}
+${row("Data de Início", params.get("data_inicio"))}
+${row("Disponibilidade", params.get("tempo"))}
+${row("Objetivo", params.get("objetivo"))}
+`;
+
+</script>
+
+</body>
+</html>
