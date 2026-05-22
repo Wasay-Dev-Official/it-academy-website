@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+
+<!-- Browser page title -->
+<title>Inscrição no Curso</title>
+
+<!-- jQuery Library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- jQuery UI Library -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- jQuery UI Styles -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<style>
+
+/* =========================
+   PAGE BACKGROUND
+   Animated technology theme
+========================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #1c92d1);
+    background-size: 800% 800%;
+    animation: bgMove 12s ease infinite;
+
+    color: white;
+}
+
+/* Background animation */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   FORM CONTAINER
+========================= */
+form {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 30px;
+
+    background: #142a38;
+    border-radius: 18px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Form title */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Form labels */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* =========================
+   INPUT FIELDS
+========================= */
+input,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+
+    border-radius: 10px;
+    border: 1px solid #355b72;
+
+    background: #1e3a4d;
+    color: white;
+
+    outline: none;
+    font-size: 14px;
+}
+
+/* Input focus effect */
+input:focus,
+textarea:focus {
+    border: 1px solid #00c6ff;
+    box-shadow: 0 0 8px #00c6ff;
+}
+
+/* Input height */
+input,
+select {
+    height: 45px;
+}
+
+/* Text area styling */
+textarea {
+    height: 90px;
+    resize: none;
+}
+
+/* =========================
+   CUSTOM DROPDOWN MENU
+========================= */
+.custom-select {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+/* Selected option */
+.selected {
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    background: #1e3a4d;
+    border: 1px solid #355b72;
+
+    color: white;
+}
+
+/* Dropdown options container */
+.options {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 110%;
+
+    background: #0f2a3a;
+    border: 1px solid #355b72;
+
+    border-radius: 12px;
+
+    display: none;
+    z-index: 999;
+    overflow: hidden;
+}
+
+/* Individual dropdown option */
+.option {
+    padding: 12px;
+    cursor: pointer;
+
+    color: white;
+    transition: 0.2s;
+}
+
+/* Hover effect for options */
+.option:hover {
+    background: #00c6ff;
+    color: black;
+}
+
+/* =========================
+   CHECKBOX SECTION
+========================= */
+.checkbox-group {
+    padding: 12px;
+    border-radius: 10px;
+
+    background: #1e3a4d;
+    border: 1px solid #355b72;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Checkbox labels */
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    cursor: pointer;
+    color: white;
+}
+
+/* Custom checkbox design */
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 18px;
+    height: 18px;
+
+    border: 2px solid #00c6ff;
+    border-radius: 4px;
+
+    background: #142a38;
+
+    cursor: pointer;
+
+    display: grid;
+    place-content: center;
+}
+
+/* Checkbox selected state */
+.checkbox-group input[type="checkbox"]:checked {
+    background: #00c6ff;
+    border-color: #00c6ff;
+}
+
+/* Tick mark inside checkbox */
+.checkbox-group input[type="checkbox"]::before {
+    content: "";
+
+    width: 10px;
+    height: 10px;
+
+    transform: scale(0);
+    transition: 0.2s;
+
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    background: #142a38;
+}
+
+/* Show tick when checked */
+.checkbox-group input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+input[type="submit"] {
+    margin-top: 20px;
+
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    border: none;
+    padding: 14px;
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+/* Submit button hover effect */
+input[type="submit"]:hover {
+    transform: scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     REGISTRATION FORM
+========================= -->
+<form id="formulario">
+
+<h2>🚀 Inscrição no Curso</h2>
+
+<!-- Full name -->
+<label>Nome completo:</label>
+<input type="text" id="nome">
+
+<!-- Email -->
+<label>Email:</label>
+<input type="email" id="email">
+
+<!-- Phone number -->
+<label>Telemóvel:</label>
+<input type="text" id="telefone">
+
+<!-- =========================
+     COURSE SELECTION
+========================= -->
+<label>Curso:</label>
+
+<div class="custom-select">
+
+    <!-- Default selected option -->
+    <div class="selected" data-value="Web Development">
+        Web Development
+    </div>
+
+    <!-- Dropdown options -->
+    <div class="options">
+        <div class="option" data-value="Web Development">Web Development</div>
+        <div class="option" data-value="Cybersecurity">Cybersecurity</div>
+        <div class="option" data-value="Data Science">Data Science</div>
+        <div class="option" data-value="AI">Artificial Intelligence</div>
+        <div class="option" data-value="Mobile App">Mobile App Development</div>
+        <div class="option" data-value="Cloud">Cloud Computing</div>
+    </div>
+
+</div>
+
+<!-- =========================
+     LEVEL SELECTION
+========================= -->
+<label>Nível:</label>
+
+<div class="custom-select">
+
+    <div class="selected" data-value="Iniciante">
+        Iniciante
+    </div>
+
+    <div class="options">
+        <div class="option">Iniciante</div>
+        <div class="option">Intermediário</div>
+        <div class="option">Avançado</div>
+    </div>
+
+</div>
+
+<!-- =========================
+     INTERESTS CHECKBOXES
+========================= -->
+<label>Interesses:</label>
+
+<div class="checkbox-group">
+
+    <label><input type="checkbox" value="Frontend"> Frontend</label>
+
+    <label><input type="checkbox" value="Backend"> Backend</label>
+
+    <label><input type="checkbox" value="Data"> Data</label>
+
+    <label><input type="checkbox" value="AI"> AI</label>
+
+</div>
+
+<!-- Experience -->
+<label>Experiência (anos):</label>
+<input type="number" id="experiencia">
+
+<!-- Start date -->
+<label>Data de Início:</label>
+<input type="text" id="data_inicio">
+
+<!-- =========================
+     AVAILABILITY
+========================= -->
+<label>Disponibilidade:</label>
+
+<div class="custom-select">
+
+    <div class="selected" data-value="Manhã">
+        Manhã
+    </div>
+
+    <div class="options">
+        <div class="option">Manhã</div>
+        <div class="option">Tarde</div>
+        <div class="option">Noite</div>
+    </div>
+
+</div>
+
+<!-- User objective -->
+<label>Objetivo:</label>
+<textarea id="objetivo"></textarea>
+
+<!-- Submit button -->
+<input type="submit" value="Inscrever-se 🚀">
+
+</form>
+
+<script>
+
+/* =========================
+   DATE PICKER
+   Enables calendar selection
+========================= */
+$(function() {
+    $("#data_inicio").datepicker({
+        dateFormat: "dd-mm-yy"
+    });
+});
+
+/* =========================
+   CUSTOM DROPDOWN LOGIC
+========================= */
+document.querySelectorAll(".custom-select").forEach(select => {
+
+    const selected = select.querySelector(".selected");
+    const options = select.querySelector(".options");
+
+    /* Open / close dropdown */
+    selected.onclick = () => {
+        options.style.display =
+            options.style.display === "block" ? "none" : "block";
+    };
+
+    /* Select dropdown option */
+    select.querySelectorAll(".option").forEach(opt => {
+
+        opt.onclick = () => {
+            selected.textContent = opt.textContent;
+            selected.dataset.value = opt.textContent;
+
+            options.style.display = "none";
+        };
+
+    });
+
+});
+
+/* =========================
+   FORM SUBMISSION
+========================= */
+document.getElementById("formulario").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+/* Get selected interests */
+let skills = [...document.querySelectorAll("input[type='checkbox']:checked")]
+.map(el => el.value)
+.join(", ");
+
+/* Get form values */
+let nome = document.getElementById("nome").value;
+let email = document.getElementById("email").value;
+let telefone = document.getElementById("telefone").value;
+
+/* Get selected dropdown values */
+let curso = document.querySelectorAll(".custom-select .selected")[0].dataset.value;
+let nivel = document.querySelectorAll(".custom-select .selected")[1].dataset.value;
+let tempo = document.querySelectorAll(".custom-select .selected")[2].dataset.value;
+
+/* Additional form values */
+let experiencia = document.getElementById("experiencia").value;
+let data_inicio = document.getElementById("data_inicio").value;
+let objetivo = document.getElementById("objetivo").value;
+
+/* Basic validation */
+if(!nome || !email || !telefone){
+
+    alert("❌ Preencha Nome, Email e Telefone");
+    return;
+
+}
+
+/* Redirect to confirmation page without saving to database */
+const params = new URLSearchParams({
+
+    nome,
+    email,
+    telefone,
+
+    curso,
+    nivel,
+
+    interesses: skills,
+
+    experiencia,
+    data_inicio,
+    tempo,
+    objetivo
+
+});
+
+window.location.href = "confirmacao.html?" + params.toString();
+
+});
+
+</script>
+
+</body>
+</html>
