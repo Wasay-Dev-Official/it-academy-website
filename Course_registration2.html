@@ -2,16 +2,24 @@
 <html lang="pt">
 <head>
 <meta charset="utf-8">
+
+<!-- Browser page title -->
 <title>Inscrição no Curso</title>
 
+<!-- jQuery Library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- jQuery UI Library -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- jQuery UI Styles -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <style>
 
 /* =========================
-   BACKGROUND (CLEAN TECH BLUE)
+   PAGE BACKGROUND
+   Animated technology theme
 ========================= */
 body {
     margin: 0;
@@ -20,9 +28,11 @@ body {
     background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #1c92d1);
     background-size: 800% 800%;
     animation: bgMove 12s ease infinite;
+
     color: white;
 }
 
+/* Background animation */
 @keyframes bgMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -30,25 +40,26 @@ body {
 }
 
 /* =========================
-   FORM
+   FORM CONTAINER
 ========================= */
 form {
     max-width: 850px;
     margin: 50px auto;
     padding: 30px;
 
-    background: #142a38;   /* solid modern dark blue */
+    background: #142a38;
     border-radius: 18px;
 
     box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
+/* Form title */
 h2 {
     text-align: center;
     margin-bottom: 25px;
 }
 
-/* labels */
+/* Form labels */
 label {
     display: block;
     margin-top: 15px;
@@ -56,9 +67,10 @@ label {
 }
 
 /* =========================
-   INPUTS (SOLID STYLE)
+   INPUT FIELDS
 ========================= */
-input, textarea {
+input,
+textarea {
     width: 100%;
     box-sizing: border-box;
 
@@ -69,35 +81,41 @@ input, textarea {
     border-radius: 10px;
     border: 1px solid #355b72;
 
-    background: #1e3a4d;   /* solid input color */
+    background: #1e3a4d;
     color: white;
 
     outline: none;
     font-size: 14px;
 }
 
-input:focus, textarea:focus {
+/* Input focus effect */
+input:focus,
+textarea:focus {
     border: 1px solid #00c6ff;
     box-shadow: 0 0 8px #00c6ff;
 }
 
-input, select {
+/* Input height */
+input,
+select {
     height: 45px;
 }
 
+/* Text area styling */
 textarea {
     height: 90px;
     resize: none;
 }
 
 /* =========================
-   CUSTOM DROPDOWN (SOLID CLEAN)
+   CUSTOM DROPDOWN MENU
 ========================= */
 .custom-select {
     position: relative;
     margin-bottom: 12px;
 }
 
+/* Selected option */
 .selected {
     padding: 12px;
     border-radius: 10px;
@@ -109,13 +127,14 @@ textarea {
     color: white;
 }
 
+/* Dropdown options container */
 .options {
     position: absolute;
     left: 0;
     right: 0;
     top: 110%;
 
-    background: #0f2a3a;   /* solid dropdown */
+    background: #0f2a3a;
     border: 1px solid #355b72;
 
     border-radius: 12px;
@@ -125,23 +144,23 @@ textarea {
     overflow: hidden;
 }
 
+/* Individual dropdown option */
 .option {
     padding: 12px;
     cursor: pointer;
+
     color: white;
     transition: 0.2s;
 }
 
+/* Hover effect for options */
 .option:hover {
     background: #00c6ff;
     color: black;
 }
 
 /* =========================
-   CHECKBOX GROUP
-========================= */
-/* =========================
-   CHECKBOX GROUP (FIX WHITE ISSUE)
+   CHECKBOX SECTION
 ========================= */
 .checkbox-group {
     padding: 12px;
@@ -155,15 +174,17 @@ textarea {
     gap: 10px;
 }
 
+/* Checkbox labels */
 .checkbox-group label {
     display: flex;
     align-items: center;
     gap: 10px;
+
     cursor: pointer;
     color: white;
 }
 
-/* remove default white checkbox */
+/* Custom checkbox design */
 .checkbox-group input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
@@ -176,21 +197,23 @@ textarea {
     border-radius: 4px;
 
     background: #142a38;
+
     cursor: pointer;
 
     display: grid;
     place-content: center;
 }
 
-/* checked state */
+/* Checkbox selected state */
 .checkbox-group input[type="checkbox"]:checked {
     background: #00c6ff;
     border-color: #00c6ff;
 }
 
-/* tick mark */
+/* Tick mark inside checkbox */
 .checkbox-group input[type="checkbox"]::before {
     content: "";
+
     width: 10px;
     height: 10px;
 
@@ -201,11 +224,13 @@ textarea {
     background: #142a38;
 }
 
+/* Show tick when checked */
 .checkbox-group input[type="checkbox"]:checked::before {
     transform: scale(1);
 }
+
 /* =========================
-   BUTTON
+   SUBMIT BUTTON
 ========================= */
 input[type="submit"] {
     margin-top: 20px;
@@ -218,11 +243,13 @@ input[type="submit"] {
 
     border: none;
     padding: 14px;
+
     border-radius: 12px;
 
     transition: 0.3s;
 }
 
+/* Submit button hover effect */
 input[type="submit"]:hover {
     transform: scale(1.05);
 }
@@ -232,23 +259,38 @@ input[type="submit"]:hover {
 
 <body>
 
+<!-- =========================
+     REGISTRATION FORM
+========================= -->
 <form id="formulario">
 
 <h2>🚀 Inscrição no Curso</h2>
 
+<!-- Full name -->
 <label>Nome completo:</label>
 <input type="text" id="nome">
 
+<!-- Email -->
 <label>Email:</label>
 <input type="email" id="email">
 
+<!-- Phone number -->
 <label>Telemóvel:</label>
 <input type="text" id="telefone">
 
-<!-- COURSE -->
+<!-- =========================
+     COURSE SELECTION
+========================= -->
 <label>Curso:</label>
+
 <div class="custom-select">
-    <div class="selected" data-value="Web Development">Web Development</div>
+
+    <!-- Default selected option -->
+    <div class="selected" data-value="Web Development">
+        Web Development
+    </div>
+
+    <!-- Dropdown options -->
     <div class="options">
         <div class="option" data-value="Web Development">Web Development</div>
         <div class="option" data-value="Cybersecurity">Cybersecurity</div>
@@ -257,135 +299,227 @@ input[type="submit"]:hover {
         <div class="option" data-value="Mobile App">Mobile App Development</div>
         <div class="option" data-value="Cloud">Cloud Computing</div>
     </div>
+
 </div>
 
-<!-- LEVEL -->
+<!-- =========================
+     LEVEL SELECTION
+========================= -->
 <label>Nível:</label>
+
 <div class="custom-select">
-    <div class="selected" data-value="Iniciante">Iniciante</div>
+
+    <div class="selected" data-value="Iniciante">
+        Iniciante
+    </div>
+
     <div class="options">
         <div class="option">Iniciante</div>
         <div class="option">Intermediário</div>
         <div class="option">Avançado</div>
     </div>
+
 </div>
 
-<!-- INTERESTS -->
+<!-- =========================
+     INTERESTS CHECKBOXES
+========================= -->
 <label>Interesses:</label>
+
 <div class="checkbox-group">
+
     <label><input type="checkbox" value="Frontend"> Frontend</label>
+
     <label><input type="checkbox" value="Backend"> Backend</label>
+
     <label><input type="checkbox" value="Data"> Data</label>
+
     <label><input type="checkbox" value="AI"> AI</label>
+
 </div>
 
+<!-- Experience -->
 <label>Experiência (anos):</label>
 <input type="number" id="experiencia">
 
+<!-- Start date -->
 <label>Data de Início:</label>
 <input type="text" id="data_inicio">
 
-<!-- AVAILABILITY -->
+<!-- =========================
+     AVAILABILITY
+========================= -->
 <label>Disponibilidade:</label>
+
 <div class="custom-select">
-    <div class="selected" data-value="Manhã">Manhã</div>
+
+    <div class="selected" data-value="Manhã">
+        Manhã
+    </div>
+
     <div class="options">
         <div class="option">Manhã</div>
         <div class="option">Tarde</div>
         <div class="option">Noite</div>
     </div>
+
 </div>
 
+<!-- User objective -->
 <label>Objetivo:</label>
 <textarea id="objetivo"></textarea>
 
+<!-- Submit button -->
 <input type="submit" value="Inscrever-se 🚀">
 
 </form>
 
 <script>
+
+/* =========================
+   DATE PICKER
+   Enables calendar selection
+========================= */
 $(function() {
-  $("#data_inicio").datepicker({ dateFormat: "dd-mm-yy" });
+    $("#data_inicio").datepicker({
+        dateFormat: "dd-mm-yy"
+    });
 });
 
+/* =========================
+   CUSTOM DROPDOWN LOGIC
+========================= */
 document.querySelectorAll(".custom-select").forEach(select => {
+
     const selected = select.querySelector(".selected");
     const options = select.querySelector(".options");
 
+    /* Open / close dropdown */
     selected.onclick = () => {
         options.style.display =
             options.style.display === "block" ? "none" : "block";
     };
 
+    /* Select dropdown option */
     select.querySelectorAll(".option").forEach(opt => {
+
         opt.onclick = () => {
             selected.textContent = opt.textContent;
             selected.dataset.value = opt.textContent;
+
             options.style.display = "none";
         };
+
     });
+
 });
 
-/* ORIGINAL SCRIPT (UNCHANGED LOGIC) */
+/* =========================
+   FORM SUBMISSION
+========================= */
 document.getElementById("formulario").addEventListener("submit", function(e){
+
 e.preventDefault();
 
+/* Get selected interests */
 let skills = [...document.querySelectorAll("input[type='checkbox']:checked")]
-.map(el => el.value).join(", ");
+.map(el => el.value)
+.join(", ");
 
+/* Get form values */
 let nome = document.getElementById("nome").value;
 let email = document.getElementById("email").value;
 let telefone = document.getElementById("telefone").value;
 
+/* Get selected dropdown values */
 let curso = document.querySelectorAll(".custom-select .selected")[0].dataset.value;
 let nivel = document.querySelectorAll(".custom-select .selected")[1].dataset.value;
 let tempo = document.querySelectorAll(".custom-select .selected")[2].dataset.value;
 
+/* Additional form values */
 let experiencia = document.getElementById("experiencia").value;
 let data_inicio = document.getElementById("data_inicio").value;
 let objetivo = document.getElementById("objetivo").value;
 
+/* Basic validation */
 if(!nome || !email || !telefone){
+
     alert("❌ Preencha Nome, Email e Telefone");
     return;
+
 }
 
-fetch("http://localhost/your-project-folder/salvar.php", {
+/* Send form data to PHP backend */
+fetch("salvar.php", {
+
     method: "POST",
-    headers: {"Content-Type":"application/x-www-form-urlencoded"},
+
+    headers: {
+        "Content-Type":"application/x-www-form-urlencoded"
+    },
+
     body: new URLSearchParams({
-        nome, email, telefone,
-        curso, nivel,
+
+        nome,
+        email,
+        telefone,
+
+        curso,
+        nivel,
+
         interesses: skills,
-        experiencia, data_inicio, tempo, objetivo
+
+        experiencia,
+        data_inicio,
+        tempo,
+        objetivo
+
     })
+
 })
-.then(r=>r.text())
-.then(r=>{
-  if(r.includes("Sucesso")){
-  alert("✅ Guardado com sucesso!");
 
-  const params = new URLSearchParams({
-      nome: nome,
-      email: email,
-      telefone: telefone,
-      curso: curso,
-      nivel: nivel,
-      interesses: skills,
-      experiencia: experiencia,
-      data_inicio: data_inicio,
-      tempo: tempo,
-      objetivo: objetivo
-  });
+.then(r => r.text())
 
-  window.location.href = "confirmacao.html?" + params.toString();
+.then(r => {
 
-} else {
-  alert("❌ Erro");
-}
+    /* Success message */
+    if(r.includes("Sucesso")){
+
+        alert("✅ Guardado com sucesso!");
+
+        /* Pass form data to confirmation page */
+        const params = new URLSearchParams({
+
+            nome: nome,
+            email: email,
+            telefone: telefone,
+
+            curso: curso,
+            nivel: nivel,
+
+            interesses: skills,
+
+            experiencia: experiencia,
+            data_inicio: data_inicio,
+            tempo: tempo,
+            objetivo: objetivo
+
+        });
+
+        window.location.href =
+            "confirmacao.html?" + params.toString();
+
+    } else {
+
+        /* Error message */
+        alert("❌ Erro");
+
+    }
+
 });
 
 });
+
 </script>
 
 </body>

@@ -2,14 +2,18 @@
 <html lang="pt">
 <head>
 <meta charset="utf-8">
+
+<!-- Browser page title -->
 <title>IT Academy - Cursos</title>
 
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================
-   BODY
+   PAGE BACKGROUND
+   Animated gradient effect
 ========================= */
 body {
     margin: 0;
@@ -21,6 +25,7 @@ body {
     animation: bgMove 12s ease infinite;
 }
 
+/* Background animation */
 @keyframes bgMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -28,7 +33,8 @@ body {
 }
 
 /* =========================
-   WIDTH SYSTEM
+   PAGE WIDTH CONTROL
+   Keeps content centered
 ========================= */
 .hero,
 .section {
@@ -38,7 +44,8 @@ body {
 }
 
 /* =========================
-   HERO
+   HERO SECTION
+   Main introduction banner
 ========================= */
 .hero {
     text-align: center;
@@ -53,32 +60,35 @@ body {
     background-position: center;
 
     border-radius: 18px;
-
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
+/* Main title */
 .hero h1 {
     font-size: 44px;
     margin: 0;
 }
 
+/* Hero description */
 .hero p {
     margin-top: 12px;
     font-size: 18px;
     opacity: 0.9;
+
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
 /* =========================
-   SECTION
+   CONTENT SECTION
 ========================= */
 .section {
     margin: 40px auto;
     padding: 20px;
 }
 
+/* Section titles */
 .section h2 {
     font-size: 26px;
     margin-bottom: 20px;
@@ -86,7 +96,7 @@ body {
 }
 
 /* =========================
-   GRID
+   COURSE GRID LAYOUT
 ========================= */
 .courses {
     display: grid;
@@ -94,16 +104,22 @@ body {
     gap: 20px;
 }
 
+/* Tablet responsive layout */
 @media (max-width: 900px) {
-    .courses { grid-template-columns: repeat(2, 1fr); }
+    .courses {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
+/* Mobile responsive layout */
 @media (max-width: 600px) {
-    .courses { grid-template-columns: 1fr; }
+    .courses {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* =========================
-   CARDS
+   COURSE CARDS
 ========================= */
 .card {
     display: block;
@@ -114,6 +130,7 @@ body {
     color: #fff;
 
     background: rgba(255, 255, 255, 0.08);
+
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
@@ -124,25 +141,30 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Card title */
 .card h3 {
     margin-top: 0;
     font-size: 18px;
 }
 
+/* Card description */
 .card p {
     font-size: 14px;
     opacity: 0.85;
     line-height: 1.5;
 }
 
+/* Hover effect for cards */
 .card:hover {
     transform: translateY(-10px) scale(1.03);
+
     background: rgba(255, 255, 255, 0.18);
+
     box-shadow: 0 20px 45px rgba(0,0,0,0.25);
 }
 
 /* =========================
-   BUTTON
+   BUTTON STYLE
 ========================= */
 .btn {
     display: inline-block;
@@ -150,22 +172,24 @@ body {
     padding: 12px 20px;
 
     background: linear-gradient(135deg, #1c92d2, #2c5364);
-    color: white;
 
+    color: white;
     text-decoration: none;
+
     border-radius: 10px;
 
     font-weight: 500;
     transition: 0.3s;
 }
 
+/* Button hover effect */
 .btn:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 /* =========================
-   CTA
+   CALL TO ACTION SECTION
 ========================= */
 .cta {
     text-align: center;
@@ -181,9 +205,11 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
+/* CTA description */
 .cta p {
     max-width: 600px;
     margin: 10px auto 20px auto;
+
     font-size: 15px;
     opacity: 0.85;
 }
@@ -193,46 +219,63 @@ body {
 
 <body>
 
-<!-- HERO -->
+<!-- =========================
+     HERO SECTION
+========================= -->
 <header class="hero">
+
+    <!-- Website title -->
     <h1>💻 IT Academy</h1>
+
+    <!-- Short introduction -->
     <p>
         Aprende tecnologia através de cursos práticos e projetos reais.
         Desenvolve competências para o futuro digital.
     </p>
+
 </header>
 
-<!-- COURSES -->
+<!-- =========================
+     COURSES SECTION
+========================= -->
 <div class="section">
+
     <h2>📚 Cursos</h2>
 
+    <!-- Course cards container -->
     <div class="courses">
 
+        <!-- Web Development -->
         <a href="https://www.w3schools.com/whatis/" target="_blank" class="card">
             <h3>🌐 Web Development</h3>
             <p>Criação de websites modernos com HTML, CSS e JavaScript.</p>
         </a>
 
+        <!-- Cybersecurity -->
         <a href="https://www.ibm.com/topics/cybersecurity" target="_blank" class="card">
             <h3>🔐 Cybersecurity</h3>
             <p>Proteção de sistemas e dados contra ameaças digitais.</p>
         </a>
 
+        <!-- Data Science -->
         <a href="https://www.ibm.com/topics/data-science" target="_blank" class="card">
             <h3>📊 Data Science</h3>
             <p>Análise de dados e inteligência para tomada de decisões.</p>
         </a>
 
+        <!-- Artificial Intelligence -->
         <a href="https://www.ibm.com/topics/artificial-intelligence" target="_blank" class="card">
             <h3>🤖 Artificial Intelligence</h3>
             <p>Sistemas inteligentes e automação avançada.</p>
         </a>
 
+        <!-- Mobile Development -->
         <a href="https://developer.android.com" target="_blank" class="card">
             <h3>📱 Mobile Development</h3>
             <p>Desenvolvimento de aplicações para dispositivos móveis.</p>
         </a>
 
+        <!-- Cloud Computing -->
         <a href="https://aws.amazon.com/what-is-cloud-computing/" target="_blank" class="card">
             <h3>☁️ Cloud Computing</h3>
             <p>Infraestrutura e serviços na cloud moderna.</p>
@@ -241,15 +284,22 @@ body {
     </div>
 </div>
 
-<!-- CTA -->
+<!-- =========================
+     ABOUT / CTA SECTION
+========================= -->
 <div class="section cta">
+
     <h2>🏢 Sobre a IT Academy</h2>
 
     <p>
         Plataforma de formação tecnológica focada em aprendizagem prática e preparação para o mercado de trabalho.
     </p>
 
-    <a href="Course_registration2.html" class="btn">Inscrever-se 🚀</a>
+    <!-- Registration button -->
+    <a href="Course_registration2.html" class="btn">
+        Inscrever-se 🚀
+    </a>
+
 </div>
 
 </body>

@@ -2,14 +2,18 @@
 <html lang="pt">
 <head>
 <meta charset="utf-8">
+
+<!-- Website title shown in browser tab -->
 <title>IT Academy</title>
 
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================
-   BODY
+   PAGE BACKGROUND
+   Animated gradient background
 ========================= */
 body {
     margin: 0;
@@ -22,13 +26,14 @@ body {
     animation: bgMove 12s ease infinite;
 }
 
+/* Background animation */
 @keyframes bgMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* glow blobs */
+/* Decorative glowing effect */
 body::before {
     content: "";
     position: absolute;
@@ -42,6 +47,7 @@ body::before {
     animation: float 6s ease-in-out infinite;
 }
 
+/* Second glowing background effect */
 body::after {
     content: "";
     position: absolute;
@@ -55,6 +61,7 @@ body::after {
     animation: float 8s ease-in-out infinite reverse;
 }
 
+/* Floating animation for glow effects */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(30px); }
@@ -62,7 +69,8 @@ body::after {
 }
 
 /* =========================
-   CENTER
+   MAIN CONTAINER
+   Centers content on screen
 ========================= */
 .container {
     height: 100vh;
@@ -74,7 +82,8 @@ body::after {
 }
 
 /* =========================
-   HERO (UPGRADED)
+   HERO SECTION
+   Main content card
 ========================= */
 .hero {
     text-align: center;
@@ -93,18 +102,19 @@ body::after {
     max-width: 600px;
 }
 
+/* Hover effect for hero card */
 .hero:hover {
     transform: translateY(-10px);
     box-shadow: 0 30px 80px rgba(0,0,0,0.6);
 }
 
-/* fade */
+/* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(25px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* small badge */
+/* Small top badge */
 .badge {
     display: inline-block;
     padding: 6px 14px;
@@ -121,7 +131,7 @@ body::after {
     color: #00c6ff;
 }
 
-/* TITLE */
+/* Main heading */
 h1 {
     margin: 0;
     font-size: 42px;
@@ -131,7 +141,7 @@ h1 {
     text-shadow: 0 0 20px rgba(0,198,255,0.25);
 }
 
-/* TEXT */
+/* Description text */
 .desc {
     margin-top: 18px;
     font-size: 15px;
@@ -144,7 +154,7 @@ h1 {
 }
 
 /* =========================
-   BUTTON (UPGRADED)
+   BUTTON STYLE
 ========================= */
 .btn {
     display: inline-block;
@@ -165,6 +175,7 @@ h1 {
     transition: 0.3s;
 }
 
+/* Button hover animation */
 .btn:hover {
     transform: scale(1.1);
     box-shadow: 0 18px 45px rgba(0,198,255,0.4);
@@ -175,14 +186,19 @@ h1 {
 
 <body>
 
+<!-- Main page container -->
 <div class="container">
 
+    <!-- Hero content box -->
     <div class="hero">
 
+      <!-- Small label -->
       <div class="badge">Plataforma de Formação</div>
 
+      <!-- Main title -->
       <h1>💻 IT Academy</h1>
 
+      <!-- Website description -->
       <p class="desc">
         Aprende tecnologia de forma simples e prática.<br>
         Explora diferentes áreas da programação.<br>
@@ -190,6 +206,7 @@ h1 {
         Prepara-te para o mercado digital.
       </p>
 
+      <!-- Navigation button -->
       <a href="Course_registration1.html" class="btn">
         Ver Cursos 🚀
       </a>
